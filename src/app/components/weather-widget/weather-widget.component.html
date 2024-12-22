@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ weather.name }}, {{ weather.sys.country }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="weather-content">
+      <div class="weather-container">
+        <img
+          class="weather-icon"
+          [src]="imageUrl"
+          alt="Weather icon"
+        />
+        <div class="temp-info">
+          <div class="temp-value">
+            {{ weather.main.temp | temperature }}°C
+          </div>
+          <div class="temp-feel">
+            Feels like {{ weather.main.feels_like | temperature }}°C,
+            {{ weather.weather[0].description }}
+          </div>
+          <div class="humidity">
+            <span class="humidity-icon">💧</span>
+            Humidity: {{ weather.main.humidity }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

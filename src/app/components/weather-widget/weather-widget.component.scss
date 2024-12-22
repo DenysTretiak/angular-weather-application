@@ -1,0 +1,45 @@
+mat-card {
+  max-width: 400px;
+
+  mat-card-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 1rem ;
+  }
+
+  .weather-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .weather-container {
+      display: flex;
+      align-items: center;
+
+      .weather-icon {
+        width: 60px;
+        margin-right: 1rem;
+      }
+
+      .temp-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .temp-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .temp-feel {
+        margin-top: 0.5rem;
+        color: #555;
+      }
+
+      .humidity {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

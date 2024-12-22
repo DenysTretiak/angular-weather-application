@@ -1,0 +1,29 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search-form">
+  <div class="form-container">
+    <mat-form-field class="example-full-width">
+      <mat-label>City name</mat-label>
+      <input matInput formControlName="cityName" placeholder="Ex. Toronto">
+    </mat-form-field>
+
+    <div class="error-message" *ngIf="searchForm.get('cityName')?.invalid && searchForm.get('cityName')?.touched">
+      <span *ngIf="searchForm.get('cityName')?.errors?.['required']">
+        City name is required.
+      </span>
+      <span *ngIf="searchForm.get('cityName')?.errors?.['minlength']">
+          City name should be at least 2 characters long.
+      </span>
+    </div>
+    <button mat-stroked-button class="action-button" type="submit" [disabled]="isLoading">Search</button>
+    <button mat-stroked-button color="accent" class="action-button" (click)="addToFavorites($event)">Add to Favorites</button>
+  </div>
+
+</form>
+
+@if (weatherData || forecastData) {
+  <app-weather-widget [weather]="weatherData"></app-weather-widget>
+  <app-forecast [forecast]="forecastData"></app-forecast>
+}
+
+<app-favorite-cites (onCityChange)="onCityChange($event)"></app-favorite-cites>
+
+

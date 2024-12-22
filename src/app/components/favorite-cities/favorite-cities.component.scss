@@ -1,0 +1,17 @@
+.mat-card {
+  max-width: 400px;
+
+  .mat-card-title {
+    padding: 16px;
+  }
+
+  .list-item-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .favorite-city {
+    cursor: pointer;
+  }
+}

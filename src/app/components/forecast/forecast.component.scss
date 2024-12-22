@@ -1,0 +1,38 @@
+.mat-card {
+  max-width: 700px;
+  padding: 20px;
+  margin: 20px 0;
+
+  .horizontal-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .forecast-table {
+    width: 100%;
+    min-width: 600px;
+    margin-top: 1rem;
+
+    td.mat-cell {
+      vertical-align: middle;
+      border: none !important;
+    }
+
+    .temp-cell {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+
+      img.weather-icon {
+        width: 60px;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .mat-mdc-cell {
+    border: none !important;
+  }
+}

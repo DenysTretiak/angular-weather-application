@@ -1,0 +1,23 @@
+<mat-card class="mat-card">
+  <mat-card-title class="mat-card-title">Favorite Cities</mat-card-title>
+  <mat-card-content>
+    @if (favoriteCities.length) {
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let city of favoriteCities">
+          <div class="list-item-container" >
+            <span class="favorite-city" (click)="showWeatherForFavorite(city)">
+              {{ city }}
+            </span>
+            <button mat-button color="warn" (click)="removeFromFavorites(city)">
+              Remove
+            </button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    } @else {
+       <div>
+         There are no favorite cities.
+       </div>
+    }
+  </mat-card-content>
+</mat-card>

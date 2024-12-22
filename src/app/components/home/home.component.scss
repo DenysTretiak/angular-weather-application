@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+.search-form {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+
+  .form-container {
+    width: 25%;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .action-button {
+    margin: 1rem auto;
+    display: block !important;
+  }
+
+  .error-message {
+    color: #d9534f;
+    font-size: 0.9em;
+    margin-bottom: 2rem;
+  }
+}
+
+::ng-deep .mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  background: #FF5B61 !important;
+  color: #dddddd !important;
+
+  button {
+    color: #dddddd !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-form .form-container {
+    width: 80%;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+}

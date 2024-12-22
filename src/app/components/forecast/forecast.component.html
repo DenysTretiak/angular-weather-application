@@ -1,0 +1,30 @@
+<mat-card class="mat-card">
+  <mat-card-title>5-day forecast</mat-card-title>
+  <mat-card-content>
+    <div class="horizontal-scroll">
+      <table mat-table [dataSource]="filteredForecasts" class="mat-elevation-z2 forecast-table">
+
+        <ng-container matColumnDef="date">
+          <td mat-cell *matCellDef="let day">
+            {{ day.dt_txt | date: 'MMM, d, yyy' }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="iconAndTemp">
+          <td mat-cell *matCellDef="let day" class="temp-cell">
+            <img class="weather-icon" [src]="getImageUrl(day.weather[0].icon)" alt="Weather icon">
+            <span>{{ day.main.temp_max | temperature }}° / {{ day.main.temp_min | temperature }}°C</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="condition">
+          <td mat-cell *matCellDef="let day">
+            {{ day.weather[0].description }}
+          </td>
+        </ng-container>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
